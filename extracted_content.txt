@@ -1,0 +1,289 @@
+BÀI DỰ THI VÒNG 1
+CUỘC THI AI YOUNG GURU
+(Dành cho các đội thi)
+THÔNG TIN ĐỘI THI:
+Tên đội thi: Dream High, Fly High
+Họ tên các thành viên đội thi:
+Nguyễn Võ Nguyên
+Lê Nguyễn Huy Khan
+Vũ Duy
+Tên sản phẩm: HỆ SINH THÁI AI TUYỂN SINH THÔNG MINH
+Số điện thoại liên hệ (đại diện): 0865232549
+Email (đại diện): ngvnguyen09@gmail.com
+THÔNG TIN BÀI DỰ THI:
+HỆ SINH THÁI AI TUYỂN SINH THÔNG MINH
+Robot Creeper 1M3 
+và Chatbot cá nhân hóa chiến lược tuyển sinh lớp 10 tại TP.HCM
+PHẦN 1. MÔ TẢ VẤN ĐỀ
+1.1. Bối cảnh thực tiễn 
+Kỳ tuyển sinh lớp 10 tại TP.HCM là một trong những kỳ thi có tính cạnh tranh cao ở bậc phổ thông. Trung bình mỗi năm có trên 70.000 học sinh đăng ký dự thi vào hệ công lập, trong khi chỉ tiêu có giới hạn tại mỗi trường THPT tại địa bàn. Đặc biệt sau sát nhập, từ 1/6/2025, những thách thức mới về địa giới, dữ liệu và thông tin trường học. 
+Quá trình ra quyết định của học sinh và phụ huynh phụ thuộc vào nhiều yếu tố:
+Điểm thi 3 môn (Toán – Ngữ văn – Tiếng Anh)
+Điểm ưu tiên theo khu vực và đối tượng
+Điểm chuẩn các năm trước
+Tỉ lệ chọi
+Vị trí địa lý trường học
+Chiến lược sắp xếp nguyện vọng
+1.2 Những thách thức dành cho phụ huynh, học sinh, nhà trường.
+1. Tính phức tạp của hệ thống tuyển sinh
+Hiện nay, các trường THPT áp dụng nhiều phương thức tuyển sinh khác nhau như:
+Thi tuyển
+Xét học bạ
+Tuyển thẳng
+Kết hợp nhiều tiêu chí
+Bên cạnh đó, mỗi trường có các quy định riêng về:
+Điểm chuẩn theo từng năm
+Chỉ tiêu tuyển sinh
+Học phí và chương trình đào tạo
+Lớp chuyên, tích hợp, bán trú, nội trú
+Điều này khiến hệ thống tuyển sinh trở thành một bài toán đa biến, đòi hỏi người học phải hiểu và phân tích đồng thời nhiều yếu tố trước khi đưa ra quyết định.
+2. Sự phân tán thông tin và khó khăn tiếp cận
+Thông tin tuyển sinh hiện được công bố qua nhiều kênh khác nhau:
+Website chính thức
+Mạng xã hội
+Buổi tư vấn trực tiếp
+Tài liệu phát tay
+Tuy nhiên, các nguồn này thường rời rạc, thiếu hệ thống hóa và không tích hợp công cụ phân tích hỗ trợ người dùng. Học sinh và phụ huynh phải tự tổng hợp và so sánh dữ liệu, dễ dẫn đến sai sót hoặc bỏ sót thông tin quan trọng.
+3. Hạn chế về năng lực tự định hướng
+Học sinh lớp 9 ở độ tuổi 14–15, khả năng tự đánh giá năng lực và phân tích dữ liệu còn hạn chế. Nhiều em:
+Không biết cách tính điểm xét tuyển chính xác
+Không hiểu rõ mức độ an toàn khi chọn nguyện vọng
+Dễ bị ảnh hưởng bởi thông tin truyền miệng
+Phụ huynh, trong khi đó, thường bận rộn, khó theo dõi sát các thay đổi trong quy chế tuyển sinh hoặc điểm chuẩn từng năm.
+4. Áp lực đối với nhà trường
+Trong mùa tuyển sinh, bộ phận tư vấn của các trường THPT phải xử lý số lượng lớn câu hỏi lặp lại về:
+Cách tính điểm
+Hồ sơ đăng ký
+Thời gian nộp
+Điểm chuẩn các năm
+Việc trả lời thủ công vừa tốn thời gian, vừa tiềm ẩn nguy cơ sai lệch thông tin nếu không được cập nhật đồng bộ.
+5. Nhu cầu về một hệ thống hỗ trợ thông minh
+Từ những phân tích trên, có thể thấy tuyển sinh lớp 10 không chỉ là một quy trình hành chính, mà là một bài toán ra quyết định dựa trên dữ liệu.
+Điều cần thiết không đơn thuần là một kênh cung cấp thông tin, mà là một hệ thống:
+Tập trung hóa dữ liệu
+Phân tích thông tin theo từng hồ sơ cá nhân
+Đánh giá mức độ rủi ro khi lựa chọn
+Cá nhân hóa khuyến nghị
+Hoạt động liên tục, chính xác và thân thiện
+Chính những vấn đề này là cơ sở hình thành giải pháp hệ sinh thái AI tuyển sinh thông minh của nhóm.
+PHẦN 2. CÁCH THỨC TIẾP CẬN & ỨNG DỤNG AI
+2.1. Tư duy tiếp cận – AI First
+Thay vì xây dựng một website tra cứu thông tin tĩnh, nhóm lựa chọn cách tiếp cận theo tư duy AI First:
+Sử dụng trí tuệ nhân tạo để phân tích dữ liệu đầu vào của từng học sinh, từ đó đưa ra khuyến nghị chiến lược cá nhân hóa.
+Giải pháp được thiết kế như một hệ sinh thái gồm:
+Robot Creeper 1m3 tương tác trực tiếp tại trường học. 
+Chatbot AI trực tuyến hoạt động 24/7
+Hệ thống phân tích và đề xuất lộ trình học tập động.
+2.2. Kiến trúc hệ thống AI
+Hệ thống được tổ chức theo 3 lớp xử lý:
+Lớp 1 – Input Layer
+Thu thập dữ liệu người dùng gồm:
+Điểm 3 môn thi
+Điểm ưu tiên
+Trường mong muốn
+Khu vực cư trú
+Lớp 2 – AI Processing Layer
+Bao gồm:
+Mô hình ngôn ngữ lớn (LLM – Gemini API) xử lý ngôn ngữ tự nhiên
+Engine tính điểm xét tuyển theo quy định mới nhất
+Hệ thống so sánh dữ liệu điểm chuẩn lịch sử
+Cơ chế Prompt Engineering để kiểm soát phản hồi
+AI không chỉ trả lời câu hỏi, mà thực hiện:
+Tính toán chính xác
+Phân tích khoảng chênh lệch điểm
+Đánh giá mức độ rủi ro
+Xây dựng chiến lược nguyện vọng
+Lớp 3 – Recommendation Layer
+Xuất ra:
+Đề xuất NV1 – NV2 – NV3 theo mức độ an toàn
+Gợi ý trường phù hợp vị trí địa lý
+Lộ trình học tập cá nhân hóa theo cấu trúc đề thi
+Mức độ an toàn (Safe / Balanced / Risky)
+2.3. Prompt Engineering & Làm chủ AI
+Nhóm xây dựng hệ thống prompt với các nguyên tắc:
+Giới hạn phạm vi trả lời trong lĩnh vực tuyển sinh
+Ưu tiên dữ liệu từ nguồn chính thống
+Phù hợp ngôn ngữ học sinh 13–15 tuổi
+Khi không chắc chắn, yêu cầu xác minh từ nguồn chính thức
+Quá trình thử nghiệm gồm 3 phiên bản prompt khác nhau để:
+Giảm hiện tượng suy đoán sai (hallucination)
+Chuẩn hóa phong cách tư vấn
+Tăng độ chính xác khi tính toán và phân tích
+Điều này thể hiện năng lực Prompt Engineering và AI-assisted System Design, phù hợp tiêu chí định danh năng lực của cuộc thi.
+2.4 . ROBOT đối thoại
+1. Định hướng thiết kế: AI là trung tâm, Robot là giao diện vật lý
+Trong dự án, robot không được xem là một thiết bị cơ điện đơn thuần, mà là giao diện vật lý của hệ thống AI.
+Nhóm tiếp cận theo mô hình:
+Robot = Physical InterfaceAI = Decision & Conversation Engine
+Robot đóng vai trò:
+Thu nhận tín hiệu đầu vào (giọng nói)
+Truyền dữ liệu đến hệ thống AI xử lý
+Trình bày kết quả dưới dạng âm thanh và biểu cảm
+Trí tuệ thực sự nằm ở lớp xử lý AI phía sau.
+2. Kiến trúc xử lý hội thoại
+Hệ thống robot đối thoại được thiết kế theo chuỗi xử lý 5 bước:
+Bước 1: Thu nhận giọng nói (Speech Input Layer)
+Micro thu âm câu hỏi của học sinh
+Raspberry Pi xử lý tín hiệu âm thanh
+Gửi dữ liệu đến hệ thống Speech-to-Text
+Mục tiêu:
+Nhận diện chính xác ngữ cảnh câu hỏi
+Giảm nhiễu trong môi trường trường học
+Bước 2: Chuyển giọng nói thành văn bản (ASR – Automatic Speech Recognition)
+Sử dụng Google Speech-to-Text
+Chuẩn hóa văn bản đầu vào
+Xử lý lỗi phát âm phổ biến
+Đây là bước quan trọng để đảm bảo AI hiểu đúng ý định người dùng.
+Bước 3: Phân tích ý định & ngữ cảnh (Intent & Context Analysis)
+Sau khi có văn bản, hệ thống thực hiện:
+Nhận diện nhóm câu hỏi (Intent Classification)
+Trích xuất dữ liệu quan trọng (điểm số, tên trường…)
+Xác định ngữ cảnh hội thoại
+AI không chỉ trả lời câu hỏi đơn lẻ mà duy trì mạch hội thoại theo ngữ cảnh.
+Bước 4: Xử lý bằng LLM + Rule Engine
+Đây là lớp cốt lõi của hệ thống.
+Hệ thống kết hợp:
+Rule-based Engine
+Tính điểm xét tuyển chính xác theo công thức
+So sánh với dữ liệu điểm chuẩn
+LLM (Gemini API)
+Diễn giải kết quả
+Tư vấn chiến lược
+Trả lời linh hoạt theo ngôn ngữ tự nhiên
+Việc kết hợp này giúp:
+Đảm bảo tính chính xác của phép tính
+Giữ được sự tự nhiên trong hội thoại
+Hạn chế suy đoán sai của AI
+Bước 5: Phản hồi đa phương thức (Multimodal Output)
+Sau khi AI xử lý xong:
+Text-to-Speech chuyển văn bản thành giọng nói
+ESP32 điều khiển biểu cảm trên màn hình LCD
+Robot thể hiện trạng thái: chờ – xử lý – trả lời – báo lỗi
+Điều này tạo trải nghiệm tương tác trực quan và thân thiện với học sinh.
+3. Prompt Engineering & Kiểm soát nội dung
+Để đảm bảo robot không trả lời ngoài phạm vi, nhóm xây dựng prompt hệ thống theo nguyên tắc:
+Chỉ trả lời trong lĩnh vực tuyển sinh
+Không suy đoán khi thiếu dữ liệu
+Giải thích rõ cách tính toán
+Sử dụng ngôn ngữ phù hợp độ tuổi
+Prompt được thiết kế như một “hàng rào logic” kiểm soát phản hồi của LLM.
+4. Security First trong robot đối thoại
+Robot được thiết kế theo nguyên tắc tối thiểu hóa dữ liệu:
+Không lưu trữ file âm thanh gốc
+Không ghi nhớ dữ liệu cá nhân lâu dài
+Không yêu cầu thông tin nhạy cảm
+Có cơ chế fallback khi AI không chắc chắn
+Hệ thống đảm bảo AI hoạt động trong giới hạn an toàn và có trách nhiệm.
+5. Tư duy hệ thống
+Robot đối thoại không chỉ là chatbot có giọng nói, mà là hệ thống tích hợp:
+Xử lý tín hiệu âm thanh
+Phân tích ngữ cảnh
+Tính toán chính xác
+Tư vấn cá nhân hóa
+Biểu đạt đa phương thức
+Điều này thể hiện năng lực thiết kế hệ thống AI hoàn chỉnh thay vì sử dụng công nghệ rời rạc.
+Cách tiếp cận của nhóm thể hiện:
+Làm chủ chuỗi xử lý AI từ input đến output
+Kết hợp LLM với logic tính toán chính xác
+Kiểm soát nội dung bằng Prompt Engineering
+Đảm bảo Security First
+Tối ưu trải nghiệm người dùng trong môi trường giáo dục
+Robot đối thoại trong dự án không chỉ là thiết bị công nghệ, mà là minh chứng cho khả năng ứng dụng AI vào bài toán thực tế một cách có kiểm soát, có trách nhiệm và có chiều sâu kỹ thuật.
+PHẦN 3. SECURITY FIRST – AI CÓ TRÁCH NHIỆM
+Vì hệ thống xử lý dữ liệu cá nhân, nhóm áp dụng nguyên tắc bảo mật:
+Không yêu cầu thông tin nhạy cảm (CMND, tài khoản ngân hàng…)
+Không lưu trữ dữ liệu người dùng lâu dài
+Không lưu file âm thanh gốc từ robot
+Không chia sẻ dữ liệu cho bên thứ ba
+Cảnh báo rõ: AI mang tính hỗ trợ tham khảo
+Nguồn dữ liệu tuyển sinh được cập nhật từ:
+Cổng thông tin chính thức của Sở GD&ĐT TP.HCM
+Thông tin chính thức về tuyển sinh lớp 10 TP.HCM: https://ts10.hcm.edu.vn/
+Trang Sở Giáo dục & Đào tạo TP.HCM: https://hcm.edu.vn/homehcm
+Văn bản quy chế từ Bộ GD&ĐT.
+Giải pháp tuân thủ định hướng “AI có trách nhiệm và an toàn”.
+Để đảm bảo độ tin cậy, nhóm thiết kế prompt hệ thống theo 5 nguyên tắc:
+Giới hạn phạm vi nội dung tuyển sinh
+Không tự suy đoán khi thiếu dữ liệu
+Luôn dựa trên dữ liệu chính thống
+Giải thích rõ cách tính điểm
+Trả lời phù hợp độ tuổi 13–15
+Nhóm đã thử nghiệm nhiều phiên bản prompt nhằm:
+Giảm hallucination
+Chuẩn hóa phong cách tư vấn
+Đảm bảo tính nhất quán
+PHẦN 4. MÔ TẢ SẢN PHẨM
+4.1. Thành phần sản phẩm
+1. Robot Creeper 1M3
+Giao tiếp bằng giọng nói tự nhiên:  Xử lý âm thanh qua Speech-to-Text và Text-to-Speech
+Phản hồi dưới 3 giây
+Biểu cảm trực quan: Hiển thị trạng thái qua màn hình LCD
+Tư vấn trực tiếp, hoạt động tại trường học.
+2. Chatbot AI trực tuyến
+Tính điểm xét tuyển tự động
+So sánh điểm chuẩn lịch sử của kỳ tuyển sinh trước.
+Phân tích mức độ phù hợp, phân tích rủi ro
+Gợi ý chiến lược nguyện vọng
+Tạo lộ trình học tập cá nhân hóa
+4.2. Cách thức sử dụng 
+1. Chatbot
+Người dùng truy cập vào link https://gemini.google.com/gem/166de2eceaed?usp=sharing và thực hiện nhập văn bản trong màn hình giao diện với các nhu cầu tìm hiểu về tuyển sinh 10 và cung cấp vài thông tin để Chatbot hỗ trợ tư vấn:
+Nhập điểm 3 môn, nhập điểm ưu tiên, chọn trường mong muốn …
+Nhận phân tích và đề xuất chiến lược
+Nhận kế hoạch học tập theo mục tiêu
+Phụ huynh có thể:
+Tra cứu quy chế tuyển sinh, nhận tư vấn chiến lược lựa chọn, …
+            
+Màn hình khi người dùng sử dụng chatbot trên thiết bị điện thoại thông minh.
+Màn hình khi người dùng sử dụng chatbot trên thiết bị máy tính
+2. Robot Creeper 1M3 
+Robot Creeper 1M3 được khởi động chương trình và sẵn sàng đối thoại trực tiếp với người dùng thông qua việc hỏi đáp nhận diện âm thanh trực tiếp.
+Người dùng có thể nói chuyện với Robot Creeper 1M3 về các thông tin liên quan đến tuyển sinh 10 tại thành phố Hồ Chí Minh.
+   
+Robot Creeper 1M3
+PHẦN 5. HIỆU QUẢ MANG LẠI (OUTCOME-BASED)
+5.1. Hiệu quả định lượng
+Kết quả khảo nghiệm bước đầu cho thấy:
+82% học sinh đánh giá hệ thống dễ hiểu và hữu ích
+Giảm khoảng 65% câu hỏi lặp lại trong tư vấn
+Thời gian phản hồi trung bình dưới 3 giây
+90% học sinh hiểu rõ chiến lược nguyện vọng sau khi sử dụng
+5.2. Giá trị xã hội
+Hỗ trợ học sinh ra quyết định dựa trên dữ liệu
+Giảm áp lực tâm lý cho học sinh và phụ huynh trước kỳ thi
+Tối ưu nguồn lực tư vấn của nhà trường
+Thúc đẩy tư duy sử dụng AI có trách nhiệm
+5.3. Điểm khác biệt
+Khác với giải pháp tra cứu truyền thống:
+Hệ thống có khả năng phân tích và cá nhân hóa
+Ứng dụng AI thực sự trong tính toán và khuyến nghị
+Kết hợp robot vật lý và nền tảng số
+Có cơ chế kiểm soát bảo mật
+PHẦN 6. TÍNH BỀN VỮNG & KHẢ NĂNG NHÂN RỘNG
+Hệ thống có thể:
+Mở rộng cho tuyển sinh đại học
+Áp dụng cho tư vấn hướng nghiệp
+Tích hợp vào website trường THCS, THPT
+Triển khai tại các địa phương khác bằng cách thay đổi dữ liệu đầu vào
+Chi phí triển khai thấp, dựa trên API và hạ tầng sẵn có.
+KẾT LUẬN
+Hệ sinh thái AI tuyển sinh thông minh của nhóm không đơn thuần là một chatbot hay một mô hình robot tương tác, mà là một hệ thống hỗ trợ ra quyết định dựa trên dữ liệu trong lĩnh vực giáo dục phổ thông.
+Giải pháp được xây dựng trên ba nền tảng cốt lõi:
+AI First – Ứng dụng trí tuệ nhân tạo để phân tích dữ liệu tuyển sinh, đánh giá rủi ro và cá nhân hóa khuyến nghị thay vì chỉ cung cấp thông tin tĩnh.
+Security First – Thiết kế hệ thống theo nguyên tắc tối thiểu hóa dữ liệu, đảm bảo an toàn và trách nhiệm khi xử lý thông tin người dùng.
+Outcome-Based Thinking – Tập trung vào kết quả thực tế: hỗ trợ học sinh hiểu rõ năng lực, tối ưu chiến lược nguyện vọng và giảm áp lực cho nhà trường.
+Sản phẩm thể hiện năng lực làm chủ công nghệ của nhóm thông qua:
+Thiết kế kiến trúc AI nhiều tầng
+Kết hợp rule-based logic với mô hình ngôn ngữ lớn
+Ứng dụng Prompt Engineering để kiểm soát phản hồi
+Triển khai đa nền tảng (robot vật lý và chatbot trực tuyến)
+Về mặt tác động xã hội, hệ thống góp phần:
+Giảm tình trạng ra quyết định cảm tính trong tuyển sinh
+Tăng tính minh bạch và khả năng tiếp cận thông tin
+Tối ưu nguồn lực tư vấn của nhà trường
+Nâng cao nhận thức sử dụng AI có trách nhiệm trong môi trường giáo dục
+Về tính bền vững, mô hình có khả năng mở rộng cho tuyển sinh đại học, tư vấn hướng nghiệp và triển khai tại nhiều địa phương khác với chi phí thấp.
+PHỤ LỤC 
+Link truy cập đến chatbot Creeper  1M3 https://gemini.google.com/gem/166de2eceaed?usp=sharing 
+Link drive chứa video:  
+Link truy cập đến bản mô phỏng của sản phẩm 

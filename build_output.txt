@@ -1,0 +1,9 @@
+
+> temp-app@0.0.0 build
+> tsc -b && vite build
+
+src/App.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/BotModel.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/BotModel.tsx(10,13): error TS6133: 'state' is declared but its value is never read.
+src/components/Features.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/Hero.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
