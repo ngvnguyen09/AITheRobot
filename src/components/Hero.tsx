@@ -26,7 +26,7 @@ export function Hero() {
           </div>
           <h1 className="text-5xl lg:text-7xl font-bold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-500">
             HỆ SINH THÁI AI <br />
-            TUYỂN SINH và LỊCH SỬ <span className="text-primary-500">THÔNG MINH</span>
+            LỊCH SỬ <span className="text-primary-500">THÔNG MINH</span>
           </h1>
         </motion.div>
 
@@ -36,7 +36,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg text-gray-400 max-w-xl"
         >
-          Giải pháp công nghệ tập trung hóa dữ liệu, đánh giá mức độ rủi ro và cá nhân hóa chiến lược tuyển sinh lớp 10 tại TP.HCM. Tích hợp Robot Creeper 1M3 và AI Chatbot cũng là chuyên viên tư vấn cho bộ môn lịch sử cấp trung học phổ thông.
+          Giải pháp công nghệ tập trung hóa dữ liệu, đánh giá mức độ rủi ro và cá nhân hóa chiến lược học Chương trình Lịch sử chuẩn giáo dục Trung học Phổ Thông. Tích hợp Robot Creeper 1M3 và AI Chatbot.
         </motion.p>
 
         <motion.div
