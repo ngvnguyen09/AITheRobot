@@ -11,7 +11,7 @@ function App() {
       {/* Footer */}
       <footer className="py-8 border-t border-dark-800 text-center">
         <p className="text-gray-500">
-          Sản phẩm dự thi Vòng 1 AI YOUNG GURU 2024 - Đội: Dream High, Fly High.
+          Đội: Dream High, Fly High.
         </p>
       </footer>
     </div>
