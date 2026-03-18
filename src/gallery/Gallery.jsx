@@ -6,6 +6,7 @@ import PhotoViz from "./PhotoViz";
 import useStore from "./store";
 import { setTargetImage, navigateImage } from "./actions";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const btnStyle = {
   padding: '12px 24px',
@@ -33,9 +34,109 @@ const arrowBtn = {
   justifyContent: 'center',
 };
 
+function LoadingScreen({ onReady }) {
+  const images = useStore.use.images();
+  const [progress, setProgress] = useState(0);
+  const [fadeOut, setFadeOut] = useState(false);
+
+  useEffect(() => {
+    if (!images || images.length === 0) return;
+
+    // Get unique URLs only
+    const uniqueUrls = [...new Set(images.map(img => img.url))];
+    const isVideoUrl = (url) => /\.(mp4|webm|mkv|mov)(\?.*)?$/i.test(url);
+    const imageUrls = uniqueUrls.filter(u => !isVideoUrl(u));
+    
+    if (imageUrls.length === 0) {
+      setProgress(100);
+      return;
+    }
+
+    let loaded = 0;
+    imageUrls.forEach(url => {
+      const img = new Image();
+      img.onload = img.onerror = () => {
+        loaded++;
+        setProgress(Math.round((loaded / imageUrls.length) * 100));
+      };
+      img.src = url;
+    });
+  }, [images]);
+
+  useEffect(() => {
+    if (progress >= 100) {
+      const timer = setTimeout(() => setFadeOut(true), 400);
+      const done = setTimeout(() => onReady(), 1200);
+      return () => { clearTimeout(timer); clearTimeout(done); };
+    }
+  }, [progress, onReady]);
+
+  return (
+    <div style={{
+      position: 'absolute',
+      inset: 0,
+      zIndex: 100,
+      background: '#0a0a0a',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: '30px',
+      opacity: fadeOut ? 0 : 1,
+      transition: 'opacity 0.8s ease',
+      pointerEvents: fadeOut ? 'none' : 'all',
+    }}>
+      {/* Spinning ring */}
+      <div style={{
+        width: '80px',
+        height: '80px',
+        borderRadius: '50%',
+        border: '3px solid rgba(255,255,255,0.1)',
+        borderTopColor: '#3b82f6',
+        animation: 'spin 1s linear infinite',
+      }} />
+      
+      <div style={{ textAlign: 'center' }}>
+        <p style={{
+          fontFamily: '"Dancing Script", cursive',
+          fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
+          color: 'white',
+          marginBottom: '16px',
+        }}>
+          Dự án Trạm lịch sử 4.0
+        </p>
+        <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.9rem', marginBottom: '20px' }}>
+          Đang tải hình ảnh...
+        </p>
+      </div>
+
+      {/* Progress bar */}
+      <div style={{
+        width: '220px',
+        height: '4px',
+        borderRadius: '4px',
+        background: 'rgba(255,255,255,0.08)',
+        overflow: 'hidden',
+      }}>
+        <div style={{
+          height: '100%',
+          width: `${progress}%`,
+          background: 'linear-gradient(90deg, #3b82f6, #60a5fa)',
+          borderRadius: '4px',
+          transition: 'width 0.3s ease',
+        }} />
+      </div>
+      <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.75rem' }}>{progress}%</p>
+
+      <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+    </div>
+  );
+}
+
 export default function Gallery() {
   const targetImage = useStore.use.targetImage();
   const images = useStore.use.images();
+  const [loaded, setLoaded] = useState(false);
 
   // Open first image when "Xem ảnh" is clicked
   const handleViewPhotos = () => {
@@ -45,9 +146,12 @@ export default function Gallery() {
   };
 
   return (
-    <main style={{ position: 'relative', width: '100vw', height: '100vh', overflow: 'hidden', background: '#111' }}>
+    <main style={{ position: 'relative', width: '100vw', height: '100vh', overflow: 'hidden', background: '#0a0a0a' }}>
       <PhotoViz />
       
+      {/* Loading Screen */}
+      {!loaded && <LoadingScreen onReady={() => setLoaded(true)} />}
+
       {/* Back button to Home */}
       <Link 
         to="/"
@@ -60,6 +164,8 @@ export default function Gallery() {
           fontSize: '1.2rem',
           width: '45px',
           height: '45px',
+          opacity: loaded ? 1 : 0,
+          transition: 'opacity 0.5s ease',
         }}
       >
         ✕
@@ -73,7 +179,7 @@ export default function Gallery() {
           transform: targetImage 
             ? 'translate(-50%, -50%) scale(0.6)' 
             : 'translate(-50%, -50%)',
-          opacity: targetImage ? 0 : 1,
+          opacity: (targetImage || !loaded) ? 0 : 1,
           textAlign: 'center',
           pointerEvents: 'none',
           transition: 'all 0.8s cubic-bezier(0.25, 1, 0.5, 1)',
@@ -95,13 +201,12 @@ export default function Gallery() {
           bottom: '40px',
           left: '50%',
           transform: !targetImage ? 'translateX(-50%) translateY(0)' : 'translateX(-50%) translateY(80px)',
-          opacity: !targetImage ? 1 : 0,
+          opacity: (!targetImage && loaded) ? 1 : 0,
         }}
       >
         📷 Xem ảnh
       </button>
 
-      {/* Viewer controls - only when an image is selected */}
       {/* Previous arrow */}
       <button
         onClick={() => navigateImage(-1)}
