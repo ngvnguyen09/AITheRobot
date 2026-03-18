@@ -1,20 +1,36 @@
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Hero } from './components/Hero';
 import { Features } from './components/Features';
+import { About } from './components/About';
+import { Process } from './components/Process';
+import { TechSpecs } from './components/TechSpecs';
+import { Usage } from './components/Usage';
+import { Impact } from './components/Impact';
+import { Footer } from './components/Footer';
+// @ts-expect-error - Gallery is a JS file
+import Gallery from './gallery/Gallery';
 
 function App() {
   return (
-    <div className="bg-dark-900 min-h-screen font-sans selection:bg-primary-500/30">
-      <Hero />
-      <Features />
-      
-      {/* Footer */}
-      <footer className="py-8 border-t border-dark-800 text-center">
-        <p className="text-gray-500">
-          Đội: Dream High, Fly High.
-        </p>
-      </footer>
-    </div>
+    <Router>
+      <div className="bg-dark-900 min-h-screen font-sans selection:bg-primary-500/30">
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Hero />
+              <Features />
+              <About />
+              <Process />
+              <TechSpecs />
+              <Usage />
+              <Impact />
+              <Footer />
+            </>
+          } />
+          <Route path="/gallery" element={<Gallery />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

@@ -3,6 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import { Environment, OrbitControls } from '@react-three/drei';
 import { BotModel } from './BotModel';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export function Hero() {
   return (
@@ -25,8 +26,8 @@ export function Hero() {
             </span>
           </div>
           <h1 className="text-5xl lg:text-7xl font-bold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-500">
-            HỆ SINH THÁI AI <br />
-            LỊCH SỬ <span className="text-primary-500">THÔNG MINH</span>
+            ROBOT LỊCH SỬ <br />
+            <span className="text-primary-500">CREEPER 1M3</span>
           </h1>
         </motion.div>
 
@@ -36,7 +37,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg text-gray-400 max-w-xl"
         >
-          Giải pháp công nghệ tập trung hóa dữ liệu, đánh giá mức độ rủi ro và cá nhân hóa chiến lược học Chương trình Lịch sử chuẩn giáo dục Trung học Phổ Thông. Tích hợp Robot Creeper 1M3 và AI Chatbot.
+          Robot trợ lý học tập ứng dụng trí tuệ nhân tạo, giao tiếp qua giọng nói giúp học sinh THPT tìm hiểu kiến thức lịch sử trực quan, sinh động và thúc đẩy giáo dục STEM.
         </motion.p>
 
         <motion.div
@@ -46,11 +47,11 @@ export function Hero() {
           className="flex gap-4 mt-6"
         >
           <button className="px-8 py-4 rounded-full bg-primary-600 hover:bg-primary-500 text-white font-semibold transition-all hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]">
-            Khám phá ngay
+            Khám phá hệ sinh thái
           </button>
-          <button className="px-8 py-4 rounded-full bg-dark-800 border border-dark-700 hover:bg-dark-700 text-white font-semibold transition-all">
-            Tìm hiểu nguyên lý
-          </button>
+          <Link to="/gallery" className="px-8 py-4 rounded-full bg-dark-800 border border-dark-700 hover:bg-dark-700 text-white font-semibold transition-all">
+            Xem hình ảnh hoạt động
+          </Link>
         </motion.div>
       </div>
 

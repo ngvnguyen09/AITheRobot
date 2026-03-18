@@ -12,14 +12,18 @@
   "dependencies": {
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.5.0",
+    "auto-zustand-selectors-hook": "^3.0.1",
     "autoprefixer": "^10.4.27",
     "framer-motion": "^12.34.3",
+    "immer": "^11.1.4",
     "lucide-react": "^0.575.0",
     "postcss": "^8.5.6",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-router-dom": "^7.13.1",
     "tailwindcss": "^3.4.19",
-    "three": "^0.183.2"
+    "three": "^0.183.2",
+    "zustand": "^5.0.12"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

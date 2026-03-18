@@ -5,23 +5,23 @@ import { Bot, ShieldCheck, Target, Zap } from 'lucide-react';
 const features = [
   {
     icon: <Bot className="w-8 h-8 text-primary-500" />,
-    title: 'AI First',
-    description: 'Ứng dụng trí tuệ nhân tạo để phân tích dữ liệu đầu vào. Giải pháp gồm mô hình Robot Creeper 1M3 giao tiếp trực tiếp và Chatbot AI 24/7.',
+    title: 'Giao Tiếp Giọng Nói',
+    description: 'Chuyển đổi âm thanh thành văn bản và ngược lại (Speech-to-Text & Text-to-Speech), tạo trải nghiệm tương tác trực tiếp tự nhiên.',
   },
   {
     icon: <Zap className="w-8 h-8 text-accent-500" />,
-    title: 'Xử Lý Dữ Liệu 3 Lớp',
-    description: 'Hệ thống AI xử lý mạnh mẽ: Thu nhận dữ liệu (Input), phân tích dữ liệu bằng LLM (Processing) và tự động xuất lộ trình tối ưu (Recommendation).',
+    title: 'Trí Tuệ Nhân Tạo (AI)',
+    description: 'Tích hợp mô hình Gemini AI để xử lý, phân tích câu hỏi và trả lời thông tin lịch sử một cách chính xác, nhanh chóng.',
   },
   {
     icon: <ShieldCheck className="w-8 h-8 text-green-500" />,
-    title: 'Security First',
-    description: 'Thiết kế hệ thống theo nguyên tắc tối thiểu hóa dữ liệu, đảm bảo bảo mật và AI vận hành có trách nhiệm với người dùng.',
+    title: 'Tương Tác Trực Quan',
+    description: 'Thiết kế Creeper độc đáo, đi kèm màn hình LCD hiển thị biểu cảm linh hoạt và nhận diện khuôn mặt qua thư viện OpenCV.',
   },
   {
     icon: <Target className="w-8 h-8 text-red-500" />,
-    title: 'Outcome-Based Thinking',
-    description: 'Tập trung vào kết quả: hỗ trợ học sinh tối ưu nguyện vọng, giảm rủi ro và giảm áp lực tư vấn cho hệ thống nhà trường.',
+    title: 'Giáo Dục STEM',
+    description: 'Khuyến khích tư duy khoa học, sáng tạo, và kỹ năng giải quyết vấn đề qua sự kết hợp Khoa học, Công nghệ, Kỹ thuật và Toán học.',
   }
 ];
 
