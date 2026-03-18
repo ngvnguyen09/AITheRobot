@@ -46,9 +46,9 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="flex gap-4 mt-6"
         >
-          <button className="px-8 py-4 rounded-full bg-primary-600 hover:bg-primary-500 text-white font-semibold transition-all hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]">
+          <a href="https://tramlichsu.nctitc.io.vn" target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-full bg-primary-600 hover:bg-primary-500 text-white font-semibold transition-all hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] block text-center">
             Khám phá hệ sinh thái
-          </button>
+          </a>
           <Link to="/gallery" className="px-8 py-4 rounded-full bg-dark-800 border border-dark-700 hover:bg-dark-700 text-white font-semibold transition-all">
             Xem hình ảnh hoạt động
           </Link>
