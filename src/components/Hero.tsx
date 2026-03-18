@@ -20,7 +20,7 @@ export function Hero() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-4 mb-4">
-            <img src="/logo.png" alt="Dream High, Fly High Logo" className="w-16 h-16 object-contain" />
+            <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Dream High, Fly High Logo" className="w-16 h-16 object-contain" />
             <span className="inline-block py-1 px-3 rounded-full bg-dark-800 border border-dark-700 text-sm font-medium text-primary-500">
               Đội thi: Dream High, Fly High
             </span>

@@ -10,9 +10,12 @@ import { Footer } from './components/Footer';
 // @ts-expect-error - Gallery is a JS file
 import Gallery from './gallery/Gallery';
 
+import { ErrorBoundary } from './ErrorBoundary';
+
 function App() {
   return (
-    <Router basename="/AITheRobot">
+    <ErrorBoundary>
+      <Router basename={import.meta.env.BASE_URL}>
       <div className="bg-dark-900 min-h-screen font-sans selection:bg-primary-500/30">
         <Routes>
           <Route path="/" element={
@@ -28,9 +31,11 @@ function App() {
             </>
           } />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="*" element={<div style={{color:'white', padding:'50px'}}>404 - Page Route Not Matched. Current URL: {window.location.pathname}</div>} />
         </Routes>
       </div>
     </Router>
+    </ErrorBoundary>
   );
 }
 

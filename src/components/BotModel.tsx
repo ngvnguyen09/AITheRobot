@@ -4,7 +4,7 @@ import { useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
 
 export function BotModel() {
-  const { scene } = useGLTF('/model.glb');
+  const { scene } = useGLTF(`${import.meta.env.BASE_URL}model.glb`);
   const modelRef = useRef<THREE.Group>(null);
 
   useFrame((_state, delta) => {
