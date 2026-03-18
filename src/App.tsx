@@ -12,7 +12,7 @@ import Gallery from './gallery/Gallery';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/AITheRobot">
       <div className="bg-dark-900 min-h-screen font-sans selection:bg-primary-500/30">
         <Routes>
           <Route path="/" element={
