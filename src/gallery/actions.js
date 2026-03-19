@@ -23,7 +23,7 @@ export const init = async () => {
     .map(mod => mod?.default || mod)
     .filter(url => !url.toLowerCase().includes(' - copy'));
 
-  const TARGET_NODES = 80;
+  const TARGET_NODES = 30;
   let assetPaths = [];
   
   if (baseAssetPaths.length > 0) {

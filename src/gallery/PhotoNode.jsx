@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
 */
 import { useFrame } from "@react-three/fiber";
-import { Billboard, useTexture, useVideoTexture } from "@react-three/drei";
+import { Billboard } from "@react-three/drei";
 import * as THREE from "three";
 import { setTargetImage } from "./actions";
-import { useRef, useEffect, useMemo } from "react";
+import { useRef, useEffect, useState } from "react";
 
 const thumbHeight = 35;
 
@@ -19,7 +19,6 @@ const _vec3 = new THREE.Vector3();
 const playTriangleGeo = (() => {
   const shape = new THREE.Shape();
   const s = thumbHeight * 0.3;
-  // Equilateral triangle pointing right
   shape.moveTo(-s * 0.5, -s * 0.6);
   shape.lineTo(-s * 0.5,  s * 0.6);
   shape.lineTo( s * 0.7,  0);
@@ -27,25 +26,50 @@ const playTriangleGeo = (() => {
   return new THREE.ShapeGeometry(shape);
 })();
 
-function useUVAnimation(texture, highlight, aspectRef, materialRef, opacity) {
-  useEffect(() => {
-    if (texture) {
-      texture.colorSpace = THREE.SRGBColorSpace;
-      texture.needsUpdate = true;
-      let w = texture.image?.width || texture.image?.videoWidth || 1;
-      let h = texture.image?.height || texture.image?.videoHeight || 1;
-      if (h > 0) {
-        aspectRef.current = w / h;
-      }
-    }
-  }, [texture]);
+// Global texture cache - one texture per unique URL, downscaled
+const textureCache = new Map();
+const MAX_TEX_SIZE = 512; // Max texture dimension in pixels
 
+function getOrLoadTexture(url) {
+  if (textureCache.has(url)) return textureCache.get(url);
+  
+  const placeholder = new THREE.Texture();
+  textureCache.set(url, placeholder);
+
+  const img = new Image();
+  img.crossOrigin = "anonymous";
+  img.onload = () => {
+    // Downscale to MAX_TEX_SIZE to save VRAM
+    const canvas = document.createElement('canvas');
+    let w = img.width, h = img.height;
+    if (w > MAX_TEX_SIZE || h > MAX_TEX_SIZE) {
+      const ratio = Math.min(MAX_TEX_SIZE / w, MAX_TEX_SIZE / h);
+      w = Math.round(w * ratio);
+      h = Math.round(h * ratio);
+    }
+    canvas.width = w;
+    canvas.height = h;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0, w, h);
+
+    placeholder.image = canvas;
+    placeholder.colorSpace = THREE.SRGBColorSpace;
+    placeholder.needsUpdate = true;
+    // Store original dimensions for aspect ratio
+    placeholder.userData = { width: img.width, height: img.height };
+  };
+  img.src = url;
+  
+  return placeholder;
+}
+
+function useUVAnimation(texture, highlight, aspectRef, materialRef, opacity) {
   useFrame((state, delta) => {
     if (materialRef.current) {
       materialRef.current.opacity = THREE.MathUtils.lerp(materialRef.current.opacity, opacity, delta * 4);
     }
-    
-    if (texture) {
+
+    if (texture && texture.image) {
        const aspect = aspectRef.current;
        if (isFinite(aspect) && aspect > 0) {
            if (highlight) {
@@ -67,40 +91,6 @@ function useUVAnimation(texture, highlight, aspectRef, materialRef, opacity) {
   });
 }
 
-function ImageMaterial({ url, highlight, opacity, aspectRef }) {
-  const texture = useTexture(url);
-  const materialRef = useRef();
-  useUVAnimation(texture, highlight, aspectRef, materialRef, opacity);
-
-  return (
-    <meshBasicMaterial
-      ref={materialRef}
-      map={texture}
-      color="#fff"
-      transparent
-      opacity={0} 
-      depthTest={!highlight}
-    />
-  );
-}
-
-function VideoMaterial({ url, highlight, opacity, aspectRef }) {
-  const texture = useVideoTexture(url, { crossOrigin: "Anonymous", muted: true, loop: true, playsInline: true });
-  const materialRef = useRef();
-  useUVAnimation(texture, highlight, aspectRef, materialRef, opacity);
-
-  return (
-    <meshBasicMaterial
-      ref={materialRef}
-      map={texture}
-      color="#fff"
-      transparent
-      opacity={0} 
-      depthTest={!highlight}
-    />
-  );
-}
-
 export default function PhotoNode({
   id,
   url,
@@ -116,6 +106,25 @@ export default function PhotoNode({
   const opacity = highlight ? 1 : dim ? 0.3 : 1;
   const aspectRef = useRef(1);
   const meshRef = useRef();
+  const materialRef = useRef();
+  const [texture, setTexture] = useState(null);
+
+  useEffect(() => {
+    if (isVideo) return; // Skip videos for now to save GPU
+    const tex = getOrLoadTexture(cleanUrl);
+    setTexture(tex);
+
+    // Poll for loaded dimensions
+    const check = setInterval(() => {
+      if (tex.userData?.width) {
+        aspectRef.current = tex.userData.width / tex.userData.height;
+        clearInterval(check);
+      }
+    }, 100);
+    return () => clearInterval(check);
+  }, [cleanUrl, isVideo]);
+
+  useUVAnimation(texture, highlight, aspectRef, materialRef, opacity);
 
   useFrame((state, delta) => {
     if (meshRef.current) {
@@ -125,6 +134,27 @@ export default function PhotoNode({
       meshRef.current.scale.lerp(_vec3.set(targetScaleX, targetScaleY, 1), delta * 5);
     }
   });
+
+  // Skip rendering videos entirely to save GPU - just show a placeholder
+  if (isVideo) {
+    return (
+      <group
+        onClick={(e) => { e.stopPropagation(); setTargetImage(id); }}
+        position={[x * 400, y * 400, z * 400]}
+        renderOrder={highlight ? 10 : 0}
+      >
+        <Billboard>
+          <mesh ref={meshRef} scale={[thumbHeight, thumbHeight, 1]}>
+            <planeGeometry />
+            <meshBasicMaterial color="#222" transparent opacity={opacity} />
+          </mesh>
+          <mesh position={[0, 0, 0.2]} geometry={playTriangleGeo}>
+            <meshBasicMaterial color="#ffffff" transparent opacity={0.85} side={THREE.DoubleSide} />
+          </mesh>
+        </Billboard>
+      </group>
+    );
+  }
 
   return (
     <group
@@ -138,19 +168,15 @@ export default function PhotoNode({
       <Billboard>
         <mesh ref={meshRef} scale={[thumbHeight, thumbHeight, 1]}>
           <planeGeometry />
-          {isVideo ? (
-            <VideoMaterial url={cleanUrl} highlight={highlight} opacity={opacity} aspectRef={aspectRef} />
-          ) : (
-            <ImageMaterial url={cleanUrl} highlight={highlight} opacity={opacity} aspectRef={aspectRef} />
-          )}
+          <meshBasicMaterial
+            ref={materialRef}
+            map={texture}
+            color="#fff"
+            transparent
+            opacity={0}
+            depthTest={!highlight}
+          />
         </mesh>
-        
-        {/* Play icon ▶ for videos */}
-        {isVideo && !highlight && (
-          <mesh position={[0, 0, 0.2]} geometry={playTriangleGeo}>
-            <meshBasicMaterial color="#ffffff" transparent opacity={0.85} side={THREE.DoubleSide} />
-          </mesh>
-        )}
       </Billboard>
     </group>
   );

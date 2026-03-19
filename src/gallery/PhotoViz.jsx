@@ -4,7 +4,7 @@
 */
 import {Canvas, useFrame, useThree} from '@react-three/fiber'
 import {OrbitControls} from '@react-three/drei'
-import {useRef, Suspense} from 'react'
+import {useRef} from 'react'
 import * as THREE from 'three'
 import useStore from './store'
 import PhotoNode from './PhotoNode'
@@ -99,10 +99,16 @@ export default function PhotoViz() {
     <Canvas
       camera={{position: [0, 0, 300], near: 0.1, far: 10000}}
       onPointerMissed={() => setTargetImage(null)}
+      gl={{ 
+        powerPreference: 'low-power', 
+        antialias: false,
+        alpha: false,
+        stencil: false,
+        depth: true,
+      }}
+      dpr={[1, 1.5]}
     >
-      <Suspense fallback={null}>
-        <SceneContent />
-      </Suspense>
+      <SceneContent />
     </Canvas>
   )
 }
